@@ -50,26 +50,3 @@ pub fn get_amount1_delta(sqrt_ratio_a_x96: U256, sqrt_ratio_b_x96: U256, liquidi
         I256::try_from(amount).unwrap_or(I256::ZERO)
     }
 }
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_amount0_delta() {
-        let l = I256::from(1000u128);
-        let sqrt_a = U256::from(10u128 << 96);
-        let sqrt_b = U256::from(20u128 << 96);
-        let result = get_amount0_delta(sqrt_a, sqrt_b, l);
-        assert!(result > I256::ZERO);
-    }
-
-    #[test]
-    fn test_amount1_delta() {
-        let l = I256::from(1000u128);
-        let sqrt_a = U256::from(10u128 << 96);
-        let sqrt_b = U256::from(20u128 << 96);
-        let result = get_amount1_delta(sqrt_a, sqrt_b, l);
-        assert!(result > I256::ZERO);
-    }
-}

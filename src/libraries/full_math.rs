@@ -14,7 +14,7 @@ pub fn mul_div(a: U256, b: U256, denominator: U256) -> U256 {
     }
 
     // 512-bit division
-    let mut remainder = mulmod(a, b, denominator);
+    let remainder = mulmod(a, b, denominator);
     let mut prod0 = prod0;
     let mut prod1 = prod1;
 
@@ -61,7 +61,8 @@ pub fn mulmod(a: U256, b: U256, modulus: U256) -> U256 {
     if modulus.is_zero() {
         panic!("modulus is zero");
     }
-    ((a.full_mul(b).0) % modulus)
+    let (full_mul_result, _) = full_mul(a, b);
+    full_mul_result % modulus
 }
 
 /// Returns modular inverse of a mod 2^256 (used in Uniswap for division)
