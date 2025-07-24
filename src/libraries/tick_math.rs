@@ -1,10 +1,11 @@
-use alloy_primitives::U256;
-use std::ops::Neg;
+use alloy_primitives::{I256, U256};
+use std::ops::{BitOr, Neg, Shl, Shr};
 
 use crate::libraries::{
-    U256_1, U256_2, U256_4, U256_8, U256_16, U256_32, U256_64, U256_128, U256_256, U256_512,
-    U256_1024, U256_2048, U256_4096, U256_8192, U256_16384, U256_32768, U256_65536, U256_131072,
-    U256_262144, U256_524288, U256_MAX_TICK, error::UniswapV3MathError,
+    U256_1, U256_2, U256_3, U256_4, U256_5, U256_6, U256_7, U256_8, U256_15, U256_16, U256_32,
+    U256_64, U256_127, U256_128, U256_255, U256_256, U256_512, U256_1024, U256_2048, U256_4096,
+    U256_8192, U256_16384, U256_32768, U256_65536, U256_131072, U256_262144, U256_524288,
+    U256_MAX_TICK, error::UniswapV3MathError,
 };
 
 pub const MIN_TICK: i32 = -887272;
@@ -13,6 +14,20 @@ pub const MAX_TICK: i32 = -MIN_TICK;
 pub const MIN_SQRT_RATIO: U256 = U256::from_limbs([4295128739, 0, 0, 0]);
 pub const MAX_SQRT_RATIO: U256 =
     U256::from_limbs([6743328256752651558, 17280870778742802505, 4294805859, 0]);
+
+pub const SQRT_10001: I256 = I256::from_raw(U256::from_limbs([11745905768312294533, 13863, 0, 0]));
+pub const TICK_LOW: I256 = I256::from_raw(U256::from_limbs([
+    6552757943157144234,
+    184476617836266586,
+    0,
+    0,
+]));
+pub const TICK_HIGH: I256 = I256::from_raw(U256::from_limbs([
+    4998474450511881007,
+    15793544031827761793,
+    0,
+    0,
+]));
 
 pub fn get_sqrt_ratio_at_tick(tick: i32) -> Result<U256, UniswapV3MathError> {
     let abs_tick = if tick < 0 {
@@ -104,10 +119,117 @@ pub fn get_sqrt_ratio_at_tick(tick: i32) -> Result<U256, UniswapV3MathError> {
             U256_1
         })
 }
+
+pub fn get_tick_at_sqrt_ratio(sqrt_price_x_96: U256) -> Result<i32, UniswapV3MathError> {
+    if !(sqrt_price_x_96 >= MIN_SQRT_RATIO && sqrt_price_x_96 < MAX_SQRT_RATIO) {
+        return Err(UniswapV3MathError::R);
+    }
+
+    let ratio: U256 = sqrt_price_x_96.shl(32);
+    let mut r = ratio;
+    let mut msb = U256::ZERO;
+
+    let mut f = if r > U256::from_limbs([18446744073709551615, 18446744073709551615, 0, 0]) {
+        U256_1.shl(U256_7)
+    } else {
+        U256::ZERO
+    };
+    msb = msb.bitor(f);
+    r = r.shr(f);
+
+    f = if r > U256::from_limbs([18446744073709551615, 0, 0, 0]) {
+        U256_1.shl(U256_6)
+    } else {
+        U256::ZERO
+    };
+    msb = msb.bitor(f);
+    r = r.shr(f);
+
+    f = if r > U256::from_limbs([4294967295, 0, 0, 0]) {
+        U256_1.shl(U256_5)
+    } else {
+        U256::ZERO
+    };
+    msb = msb.bitor(f);
+    r = r.shr(f);
+
+    f = if r > U256::from_limbs([65535, 0, 0, 0]) {
+        U256_1.shl(U256_4)
+    } else {
+        U256::ZERO
+    };
+    msb = msb.bitor(f);
+    r = r.shr(f);
+
+    f = if r > U256_255 {
+        U256_1.shl(U256_3)
+    } else {
+        U256::ZERO
+    };
+    msb = msb.bitor(f);
+    r = r.shr(f);
+
+    f = if r > U256_15 {
+        U256_1.shl(U256_2)
+    } else {
+        U256::ZERO
+    };
+    msb = msb.bitor(f);
+    r = r.shr(f);
+
+    f = if r > U256_3 {
+        U256_1.shl(U256_1)
+    } else {
+        U256::ZERO
+    };
+    msb = msb.bitor(f);
+    r = r.shr(f);
+
+    f = if r > U256_1 { U256_1 } else { U256::ZERO };
+
+    msb = msb.bitor(f);
+
+    r = if msb >= U256_128 {
+        ratio.shr(msb - U256_127)
+    } else {
+        ratio.shl(U256_127 - msb)
+    };
+
+    let mut log_2: I256 = (I256::from_raw(msb) - I256::from_limbs([128, 0, 0, 0])).shl(64);
+
+    for i in (51..=63).rev() {
+        r = r.overflowing_mul(r).0.shr(U256_127);
+        let f: U256 = r.shr(128);
+        log_2 = log_2.bitor(I256::from_raw(f.shl(i)));
+
+        r = r.shr(f);
+    }
+
+    r = r.overflowing_mul(r).0.shr(U256_127);
+    let f: U256 = r.shr(128);
+    log_2 = log_2.bitor(I256::from_raw(f.shl(50)));
+
+    let log_sqrt10001 = log_2.wrapping_mul(SQRT_10001);
+
+    let tick_low = ((log_sqrt10001 - TICK_LOW) >> 128_u8).low_i32();
+
+    let tick_high = ((log_sqrt10001 + TICK_HIGH) >> 128_u8).low_i32();
+
+    let tick = if tick_low == tick_high {
+        tick_low
+    } else if get_sqrt_ratio_at_tick(tick_high)? <= sqrt_price_x_96 {
+        tick_high
+    } else {
+        tick_low
+    };
+
+    Ok(tick)
+}
+
 #[cfg(test)]
 mod test {
     use super::*;
-    use std::str::FromStr;
+    use std::{ops::Sub, str::FromStr};
 
     #[test]
     fn test_get_sqrt_ratio_at_tick_bounds() {
@@ -147,7 +269,6 @@ mod test {
             U256::from_str("1461446703485210103287273052203988822378723970342").unwrap(),
             "sqrt ratio at max incorrect"
         );
-
         // checking hard coded values against solidity results
         assert_eq!(
             get_sqrt_ratio_at_tick(50).unwrap(),
@@ -219,5 +340,30 @@ mod test {
             U256::from_str("847134979253254120489401328389043031315994541").unwrap(),
             "sqrt ratio at 738203 incorrect"
         );
+    }
+
+    #[test]
+    pub fn test_get_tick_at_sqrt_ratio() {
+        //throws for too low
+        let result = get_tick_at_sqrt_ratio(MIN_SQRT_RATIO.sub(U256_1));
+        assert_eq!(
+            result.unwrap_err().to_string(),
+            "Second inequality must be < because the price can never reach the price at the max tick"
+        );
+
+        //throws for too high
+        let result = get_tick_at_sqrt_ratio(MAX_SQRT_RATIO);
+        assert_eq!(
+            result.unwrap_err().to_string(),
+            "Second inequality must be < because the price can never reach the price at the max tick"
+        );
+
+        //ratio of min tick
+        let result = get_tick_at_sqrt_ratio(MIN_SQRT_RATIO).unwrap();
+        assert_eq!(result, MIN_TICK);
+
+        //ratio of min tick + 1
+        let result = get_tick_at_sqrt_ratio(U256::from_str("4295343490").unwrap()).unwrap();
+        assert_eq!(result, MIN_TICK + 1);
     }
 }

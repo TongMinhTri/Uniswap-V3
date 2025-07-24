@@ -1,10 +1,9 @@
-use alloy_primitives::aliases::I24;
 use alloy_primitives::{Address, Bytes, I256, U256};
 
 #[derive(Clone, Debug)]
 pub struct Slot0 {
     pub sqrt_price_x96: U256,
-    pub tick: I24,
+    pub tick: i32,
     pub observation_index: u16,
     pub observation_cardinality: u16,
     pub observation_cardinality_next: u16,

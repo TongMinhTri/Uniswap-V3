@@ -1,5 +1,5 @@
 {
-  "state_block": 54405845,
+  "state_block": 54994241,
   "pool": {
     "name": "Pan.V3.USD1.MERL",
     "store": {
@@ -9,199 +9,43 @@
       "tick_spacing": "1",
       "slot0": {
         "fee_protocol": "0x0",
-        "tick": "21700",
-        "sqrt_price_x96": "0x2f59c9ca9b442c0321ae949c4"
+        "tick": "20603",
+        "sqrt_price_x96": "0x2cd24bf346c08355e46c874df"
       },
-      "fee_growth_global_0x128": "0x1256a85d878c1c5c4802f32bff",
-      "fee_growth_global_1x128": "0xbe464ff7549549d6e88993c5c0",
+      "fee_growth_global_0x128": "0x11acd3632a918869b6b8954a27",
+      "fee_growth_global_1x128": "0x63ff93c033b801940a62563db",
       "liquidity": "0xbb2201c3ea6ae11728b9",
       "tick_bitmap": {
-        "89": "0x0",
-        "93": "0x0",
-        "87": "0x0",
+        "-3466": "0x1000000",
         "86": "0x40000000000000000",
         "88": "0x0",
-        "96": "0x0",
         "47": "0x0",
-        "81": "0x0",
-        "94": "0x0",
-        "-3466": "0x1000000",
-        "91": "0x0",
-        "99": "0x0",
         "103": "0x0",
-        "119": "0x20000000000000000000000000000",
-        "85": "0x0",
-        "109": "0x10000000000000000000000000000000000000000000000000000000000000",
-        "3465": "0x10000000000000000000000000000000000000000000000000000000000",
+        "96": "0x0",
+        "87": "0x0",
+        "91": "0x0",
         "133": "0x0",
-        "84": "0x0",
-        "75": "0x0",
-        "76": "0x0",
         "105": "0x0",
-        "90": "0x0",
         "97": "0x0",
-        "108": "0x0",
+        "119": "0x20000000000000000000000000000",
+        "84": "0x0",
+        "81": "0x0",
+        "109": "0x10000000000000000000000000000000000000000000000000000000000000",
+        "75": "0x0",
+        "89": "0x0",
+        "93": "0x0",
         "95": "0x0",
-        "98": "0x0"
+        "85": "0x0",
+        "98": "0x0",
+        "108": "0x0",
+        "94": "0x0",
+        "3465": "0x10000000000000000000000000000000000000000000000000000000000",
+        "76": "0x0",
+        "99": "0x0",
+        "90": "0x0"
       },
       "ticks": {
-        "21510": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "-887272": {
-          "liquidity_net": "883709848798089040046265",
-          "liquidity_gross": "0xbb2201c3ea6ae11728b9",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "34075": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "21967": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "25072": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "25014": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "24608": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "20797": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "24038": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "23257": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "22364": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "23835": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "887272": {
-          "liquidity_net": "-1007868124896178342",
-          "liquidity_gross": "0xdfcaab83ce030a6",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "24846": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "23027": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "19335": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "22592": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "25382": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "24416": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "24190": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "28148": {
-          "liquidity_net": "-240434563346385639635149",
-          "liquidity_gross": "0x32e9fbda0ea00f14f8cd",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "27762": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
         "19461": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "25522": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "24617": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "26593": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "25246": {
           "liquidity_net": "0",
           "liquidity_gross": "0x0",
           "fee_growth_outside_0x128": "0x0",
@@ -213,13 +57,139 @@
           "fee_growth_outside_0x128": "0x0",
           "fee_growth_outside_1x128": "0x0"
         },
+        "12161": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "25522": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "23027": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "30577": {
+          "liquidity_net": "-883708840929964143867923",
+          "liquidity_gross": "0xbb21f3c73fb2a436f813",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "23870": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "24538": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "22927": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
         "24769": {
           "liquidity_net": "0",
           "liquidity_gross": "0x0",
           "fee_growth_outside_0x128": "0x0",
           "fee_growth_outside_1x128": "0x0"
         },
-        "21797": {
+        "24131": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "23835": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "24416": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "22349": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "24617": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "34075": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "23257": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "25246": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "22592": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "28148": {
+          "liquidity_net": "-240434563346385639635149",
+          "liquidity_gross": "0x32e9fbda0ea00f14f8cd",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "24608": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "19335": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "27762": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "25024": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "21510": {
           "liquidity_net": "0",
           "liquidity_gross": "0x0",
           "fee_growth_outside_0x128": "0x0",
@@ -237,25 +207,73 @@
           "fee_growth_outside_0x128": "0x0",
           "fee_growth_outside_1x128": "0x0"
         },
-        "23127": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "22990": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
         "22057": {
           "liquidity_net": "0",
           "liquidity_gross": "0x0",
           "fee_growth_outside_0x128": "0x0",
           "fee_growth_outside_1x128": "0x0"
         },
-        "24770": {
+        "24038": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "21797": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "21967": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "887272": {
+          "liquidity_net": "-1007868124896178342",
+          "liquidity_gross": "0xdfcaab83ce030a6",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "23349": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "-887272": {
+          "liquidity_net": "883709848798089040046265",
+          "liquidity_gross": "0xbb2201c3ea6ae11728b9",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "25072": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "25014": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "23127": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "20797": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "22364": {
           "liquidity_net": "0",
           "liquidity_gross": "0x0",
           "fee_growth_outside_0x128": "0x0",
@@ -267,15 +285,9 @@
           "fee_growth_outside_0x128": "0x0",
           "fee_growth_outside_1x128": "0x0"
         },
-        "24131": {
+        "24190": {
           "liquidity_net": "0",
           "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "30577": {
-          "liquidity_net": "-883708840929964143867923",
-          "liquidity_gross": "0xbb21f3c73fb2a436f813",
           "fee_growth_outside_0x128": "0x0",
           "fee_growth_outside_1x128": "0x0"
         },
@@ -285,19 +297,25 @@
           "fee_growth_outside_0x128": "0x0",
           "fee_growth_outside_1x128": "0x0"
         },
-        "22349": {
+        "25382": {
           "liquidity_net": "0",
           "liquidity_gross": "0x0",
           "fee_growth_outside_0x128": "0x0",
           "fee_growth_outside_1x128": "0x0"
         },
-        "12161": {
+        "24846": {
           "liquidity_net": "0",
           "liquidity_gross": "0x0",
           "fee_growth_outside_0x128": "0x0",
           "fee_growth_outside_1x128": "0x0"
         },
-        "25024": {
+        "26593": {
+          "liquidity_net": "0",
+          "liquidity_gross": "0x0",
+          "fee_growth_outside_0x128": "0x0",
+          "fee_growth_outside_1x128": "0x0"
+        },
+        "24770": {
           "liquidity_net": "0",
           "liquidity_gross": "0x0",
           "fee_growth_outside_0x128": "0x0",
@@ -315,25 +333,7 @@
           "fee_growth_outside_0x128": "0x0",
           "fee_growth_outside_1x128": "0x0"
         },
-        "23870": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "24538": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "23349": {
-          "liquidity_net": "0",
-          "liquidity_gross": "0x0",
-          "fee_growth_outside_0x128": "0x0",
-          "fee_growth_outside_1x128": "0x0"
-        },
-        "22927": {
+        "22990": {
           "liquidity_net": "0",
           "liquidity_gross": "0x0",
           "fee_growth_outside_0x128": "0x0",

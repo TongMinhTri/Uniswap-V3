@@ -26,8 +26,8 @@ pub fn compute_swap_step(
     if exact_in {
         let amount_remaining_less_fee = mul_div(
             amount_remaining.into_raw(),
-            U256::from(1e6 as u32 - fee_pips),    //1e6 - fee_pips
-            U256::from_limbs([1000000, 0, 0, 0]), //1e6
+            U256::from(1e6 as u32 - fee_pips),
+            U256::from_limbs([1000000, 0, 0, 0]),
         )?;
 
         amount_in = if zero_for_one {
