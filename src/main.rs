@@ -1,5 +1,5 @@
 use alloy_primitives::aliases::{I24, U24};
-use alloy_primitives::{Address, Bytes, I16, I256, U256};
+use alloy_primitives::{Address, I16, I256, U256};
 use anyhow::Result;
 use serde_json;
 use std::collections::HashMap;
@@ -305,32 +305,7 @@ impl UniswapV3Pool {
     }
 }
 
-fn main() {
-    let mut pool = UniswapV3Pool::from_json_file(
-        "src/Pan.V3.USD1.MERL.0xb604D4E46509FE1c1ef70Ab4a4941d12a49Dbd76.json",
-    );
+fn main() {}
 
-    let params = SwapParams {
-        recipient: Address::from_str("0x13f4ea83d0bd40e75c8222255bc855a974568dd4").unwrap(),
-        zero_for_one: false,
-        amount_specified: I256::from_str("25349109482797066497").unwrap(),
-        sqrt_price_limit_x96: U256::from_str("1461446703485210103287273052203988822378723970341")
-            .unwrap(),
-        data: Bytes::from(vec![0u8; 32]),
-    };
-
-    let result = pool.swap(params).unwrap();
-
-    print!("{:?}", result);
-
-    assert_eq!(
-        result.amount0,
-        I256::from_dec_str("-3229851649125690539").unwrap(),
-        "amount0 is incorrect"
-    );
-    assert_eq!(
-        result.amount1,
-        I256::from_dec_str("25349109482797066497").unwrap(),
-        "amount1 is incorrect"
-    );
-}
+#[cfg(test)]
+mod swap_test;
